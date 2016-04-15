@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.pontus.hangman.HangActivity"
+    tools:showIn="@layout/activity_hang">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/imageView_gallow"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="SECRET"
+        android:id="@+id/textView_secretWord"
+        android:layout_below="@+id/imageView_gallow"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_guess"
+        android:layout_below="@+id/textView_secretWord"
+        android:layout_centerHorizontal="true"
+        android:maxLength="1"
+        android:inputType="textCapCharacters"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/button_submitLetter"
+        android:onClick="guess"
+        android:layout_alignBottom="@+id/editText_guess"
+        android:layout_alignEnd="@+id/imageView_gallow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Wrong letters:"
+        android:id="@+id/textView_guessed_letters_header"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/textView_secretWord"
+        android:capitalize="characters" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/textView_guessed_letters"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/imageView_gallow"
+        android:layout_toStartOf="@+id/textView_secretWord"
+        android:layout_below="@+id/textView_guessed_letters_header" />
+</RelativeLayout>
